@@ -1,0 +1,123 @@
+$phone-width: 520px;
+$tablet-min-width: 521px;
+$tablet-max-width: 790px;
+$desktop-width: 791px;
+
+@mixin phone {
+    @media (max-width: #{$phone-width})  {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: #{$tablet-min-width}) and (max-width: #{$tablet-max-width})  {
+        @content;
+    }
+}
+@mixin phoneAndTablet {
+    @media (max-width: #{$tablet-max-width})  {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width: #{$desktop-width})  {
+        @content;
+    }
+}
+
+.myHeader{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: blue;     
+    
+    .nav-bar{
+        height: 2rem;
+        display: flex;     
+        justify-content: space-between;
+        align-items: center;
+
+        img{
+            width: 140px;
+            height: 120px;
+
+        }
+        .mobile-icon{
+            display: none;
+        }
+        
+        .nav-list-mobile{
+            display: none;
+        }
+        
+    }
+    @include phone(){
+
+    }
+    @include tablet(){
+
+    }
+    @include phoneAndTablet(){
+        .nav-bar{
+            padding: 1.5rem 4rem;
+            
+            .nav-item{
+                display: none;
+            }
+            .icon-nav{
+                display: block;
+            }
+            
+            .nav-list-mobile{
+                display: block;
+            }
+            .mobile-icon{                
+                display: block;
+                background-color: none;
+                button{
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
+                }
+                .icon-nav{
+                    width: 35px;
+                    height: 35px;                    
+                }
+            }
+            
+        }
+        .mobile-menu{
+            width: 100%;
+
+            .nav-list-mobile{
+                display: flex;
+                transition: width 15s;
+                flex-direction: column;
+                text-align: center;
+                // width: 100%;                
+                padding-bottom: 1rem;
+                
+                .nav-item{
+                display: block;
+                padding-top: 1.2rem;
+                
+                }
+                .nav-item a{
+                    color: white;
+                }
+            
+            }
+        }
+    }
+    @include desktop(){
+    .nav-bar{
+        padding-top: 15px;
+        padding-bottom: 15px;
+        height: 3rem;
+    }
+        ul{
+            display: flex;
+        }
+    }
+    
+
+}
