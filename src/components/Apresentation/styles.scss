@@ -1,0 +1,130 @@
+$phone-width: 520px;
+$tablet-min-width: 521px;
+$tablet-max-width: 790px;
+$desktop-width: 791px;
+
+@mixin phone {
+    @media (max-width: #{$phone-width})  {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: #{$tablet-min-width}) and (max-width: #{$tablet-max-width})  {
+        @content;
+    }
+}
+@mixin phoneAndTablet {
+    @media (max-width: #{$tablet-max-width})  {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width: #{$desktop-width})  {
+        @content;
+    }
+}
+@mixin moviment-animation($duration){
+    $name: inline-#{unique-id()};
+    
+    @keyframes #{$name}{
+        @content
+    }
+    animation-name: $name;
+    animation-duration: $duration;
+    animation-iteration-count:  infinite;
+    animation-direction: alternate; 
+}
+
+.apresentation-container{
+    width: 100%;
+    height: 100%; 
+    background: var(--background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+    .discripition-container{
+        display: flex;
+        padding: 2rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        
+        h1{
+            font-size: 2.5rem;
+            color: white;
+        }
+        span{
+            margin-top: 2.5rem;
+            color: white;
+            align-items: center;
+            text-align: center;            
+        }
+        button{
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+            padding: 15px 35px;
+            border-radius: 3px;
+            background: var(--background-button);
+            color: white;
+            
+            &:hover{
+                background: var(--hover-button);
+            }   
+        }
+    }
+    
+    .image-container{
+        width: 100%;  
+        padding-bottom: 3rem ;
+        display: flex;
+        justify-content: center;
+        img{
+
+            max-height: 400px;
+            max-width: 400px;
+            @include moviment-animation(3s){
+                0% {
+                    transform: translateY(-8%);
+                }
+                100% {
+                    transform: translateY(0);
+                }
+            }
+        }
+    }  
+    @include phoneAndTablet(){
+        flex-direction: column;
+        
+        .discripition-container{
+            margin-top: 10rem;
+            span{
+                font-size: 1.5rem;     
+                
+            }
+      
+        }
+
+    }
+    @include desktop(){
+            
+            align-items: center;
+            justify-content: center;            
+            
+        .discripition-container{
+            margin-top: 5rem;
+            span{
+                font-size: 2.0rem;  
+                text-align: start;
+            }
+        }
+        .image-container{
+            margin-top: 13rem;
+            padding-right: 3rem;            
+        } 
+    }
+    
+
+}

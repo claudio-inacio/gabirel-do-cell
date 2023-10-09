@@ -1,5 +1,6 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/alt-text */
-import { memo, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import './styles.scss';
 import logo from '../../Imgs/logo.png'
 import menuIcon from '../../Imgs/cardapio.png'
@@ -10,11 +11,24 @@ export function HeaderComponent(){
     const openMenu = () => {
         setIsOpen(!isOpen)
     }
+    const [scrollPosition, setScrollPosition] = useState(0);
+    
+    const handleScroll = () => {
+        const position = window.pageYOffset;
+        setScrollPosition(position);
+    };
 
-   return(
-    <header className='myHeader'> 
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll, { passive: true });
+    
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+    
+   return(        
+    <header className='myHeader' id={scrollPosition || isOpen ? 'meu-teste' : ''}> 
         <nav className='nav-bar'>
-        
             <div className='logo-container'>
                 <img src={logo} alt='logo Gabriel do Cell' />
             </div>

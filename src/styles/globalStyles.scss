@@ -37,7 +37,9 @@ body {
 
 :root{
     --primary:#00D2FF;
-    --background: #00154A;
+    --background: linear-gradient(to right, #385dd4, #4ccaf9);
+    --background-button: linear-gradient(to right, #6811f4, #b47bf4);
+    --hover-button: linear-gradient(to right, #6811f484, #b37bf46f);
     --blue-900:#171821;
     --blue-800: #21222D;
     --color-primary: #22AEF5;

@@ -1,12 +1,11 @@
 import React from "react";
+import { SectionApresentation } from "../../components/Apresentation";
 
 export const Home = () => {
   
   
   return (
   
-    <div>
-      <h1>Gabriel do cell</h1>
-    </div>
+  <SectionApresentation />  
   );
 };
