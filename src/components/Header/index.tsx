@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import { memo, useState } from 'react';
 import './styles.scss';
 import logo from '../../Imgs/logo.png'
