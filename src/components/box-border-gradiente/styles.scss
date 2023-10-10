@@ -1,0 +1,65 @@
+$phone-width: 520px;
+$tablet-min-width: 521px;
+$tablet-max-width: 790px;
+$desktop-width: 791px;
+
+@mixin phone {
+    @media (max-width: #{$phone-width})  {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: #{$tablet-min-width}) and (max-width: #{$tablet-max-width})  {
+        @content;
+    }
+}
+@mixin phoneAndTablet {
+    @media (max-width: #{$tablet-max-width})  {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width: #{$desktop-width})  {
+        @content;
+    }
+}
+
+@keyframes AnimarBorda {
+    0%{
+        background-position: 0;
+    }
+    100%{
+        background-position: 300%;
+    }
+    
+}
+
+.caixa{
+    position: relative;
+    width: 300px;
+    height: 50px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 3px;
+        
+    &::after, &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: calc(100% + 15px);
+        height: calc(100% + 15px);
+        // background: linear-gradient(45deg, #ffff00, #00ff00, #0099ff, #001aff, #a200ff, #ff0055, #ff0000, 
+        // #ffff00, #00ff00, #0099ff, #001aff, #a200ff,
+        // );
+        background: linear-gradient(45deg, #385dd4, #4ccaf9, #4ccaf9, #385dd4,);
+        background-size: 300%;
+        border-radius: 8px;
+        animation: AnimarBorda 8s linear infinite ;
+    }
+    &::after {
+        filter: blur(2px);
+    }
+}

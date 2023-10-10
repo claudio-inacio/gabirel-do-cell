@@ -23,28 +23,27 @@ $desktop-width: 791px;
         @content;
     }
 }
-@mixin moviment-animation($duration){
-    $name: inline-#{unique-id()};
-    
-    @keyframes #{$name}{
-        @content
-    }
-    animation-name: $name;
-    animation-duration: $duration;
-    animation-iteration-count:  infinite;
-    animation-direction: alternate; 
-}
 
-.apresentation-container{
+.iphone-container{
+    // background-color: #020001;
+    background-color: transparent;
+    // background-image: url('../../Imgs/apple-capa14.png');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center center;
+    position: relative;
+    z-index: -1;
+    max-width: 100%;
+    min-width: 320px;
     width: 100%;
-    height: 100%; 
-    background: var(--background);
+    height: 110%;     
     display: flex;
     align-items: center;
     justify-content: center;
     
     
-    .discripition-container{
+    .iphone-descripition-container{
+        margin-top: 3rem ;
         display: flex;
         padding: 2rem;
         flex-direction: column;
@@ -53,14 +52,17 @@ $desktop-width: 791px;
         flex-wrap: wrap;
         
         h1{
-            font-size: 2.5rem;
+            font-size: 3.5rem;
             color: white;
         }
-        span{
-            margin-top: 2.5rem;
+        
+        text{
+            margin-top: 1rem;
             color: white;
             align-items: center;
-            text-align: center;            
+            text-align: start;    
+            font-weight: 500;
+            font-size: 1.5rem;
         }
         button{
             margin-top: 2rem;
@@ -76,37 +78,27 @@ $desktop-width: 791px;
         }
     }
     
-    .image-container{
-        width: 100%;  
-        padding-bottom: 3rem ;
-        display: flex;
-        position: inherit;
-        justify-content: center;
-        img{
-
-            max-height: 400px;
-            max-width: 400px;
-            @include moviment-animation(3s){
-                0% {
-                    transform: translateY(-8%);
-                }
-                100% {
-                    transform: translateY(0);
-                }
+    
+    @include phone(){
+        .iphone-descripition-container{
+            margin-top: 5rem;
+            
+            text{
+                font-size: 1.3rem;
             }
         }
-    }  
+    }
+    
+    @include tablet(){
+        flex-direction: column;
+        .iphone-descripition-container{
+            margin-top: 3rem;
+        }
+    }
     @include phoneAndTablet(){
         flex-direction: column;
         
-        .discripition-container{
-            margin-top: 10rem;
-            span{
-                font-size: 1.5rem;     
-                
-            }
       
-        }
 
     }
     @include desktop(){
