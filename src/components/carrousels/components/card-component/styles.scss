@@ -1,0 +1,90 @@
+$phone-width: 520px;
+$tablet-min-width: 521px;
+$tablet-max-width: 790px;
+$desktop-width: 791px;
+
+@mixin phone {
+    @media (max-width: #{$phone-width})  {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: #{$tablet-min-width}) and (max-width: #{$tablet-max-width})  {
+        @content;
+    }
+}
+@mixin phoneAndTablet {
+    @media (max-width: #{$tablet-max-width})  {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width: #{$desktop-width})  {
+        @content;
+    }
+}
+
+.card-container{
+    display: flex;
+    background-color: rgb(215, 207, 207);
+    flex-direction: column;
+    margin-bottom: 30px;
+    position: relative;
+    width: 90%;
+    height: 100%;
+    border-radius: 10px;
+    .image-container{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        display: flex;
+        align-items: center;    
+        justify-content: center;
+        padding: 5px;
+        background: var(--background);
+        img{
+            width: 200px;
+            height: 200px;
+        }
+    }
+    span{
+        padding: 10px;
+    }
+    .descriptions-container{
+        height: 100%;
+        color: black;
+        
+        h2{
+            color: black;
+            margin: 0 auto;
+        }
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        
+        li{
+            display: flex;
+            align-items: center;
+            padding-top: 5px;
+            padding-left: 10px;
+            text{
+                margin-left: 10px;
+            }
+            img{
+                width: 30px;
+                height: 30px;
+            }
+        }
+        button{                        
+            padding: 10px 30px;
+            border-radius: 3px;
+            width: 100%;
+            background: var(--background-button);
+            color: white;
+            
+            &:hover{
+                background: var(--hover-button);
+            }   
+        }
+    }
+}

@@ -1,3 +1,4 @@
+
 .info-products-container{
     background-color: #000000;
     background-image: url('../../Imgs/apple-capa14.png');
@@ -6,4 +7,30 @@
     background-position: center center;
     position: relative;
     z-index: -1;
+}
+
+.products-disponiveis{
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    padding-top: 5px;
+    background: linear-gradient(0deg, #c8c8cd, transparent);;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    width: 100%;
+    // margin: 0;/
+  
+    .bottom-image{
+        img{
+            position: absolute;
+            left: 0;
+            right: auto;
+            bottom: -50px;
+            z-index: -1;
+            width: 100%;
+            margin: auto;
+        }
+    }
+  
 }
