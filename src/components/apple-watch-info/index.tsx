@@ -58,9 +58,9 @@ export function AppleWatchInfo(){
             </h1>
             <BorderBoxGradient message='Praticidade, Precisão e Elegância' /> 
             <InfoComplement imagePrincipal={aplleWatchImage} textColor='white' position="rigth" infoLeft={infoAppleWatchLeft} infoRigth={infoAppleWatchRigth} />
-            <button>
+            {/* <button>
                 Ver disponiveis
-            </button>    
+            </button>     */}
         </section>
     </aside>
    ) 

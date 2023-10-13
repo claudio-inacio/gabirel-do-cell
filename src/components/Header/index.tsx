@@ -36,11 +36,10 @@ export function HeaderComponent(){
             <div className='desktop-menu'>
                 <ul className='nav-list-desktop'>
                     <li className='nav-item'><a href="#"> Início</a></li>
-                    <li className='nav-item'><a href="#"> Apple Wathc</a></li>
-                    <li className='nav-item'><a href="#"> Iphone</a></li>
-                    <li className='nav-item'><a href="#"> Vantagens</a></li>
-                    <li className='nav-item'><a href="#"> Nossos Produtos</a></li>
-                    <li className='nav-item'><a href="#"> Contato</a></li>
+                    <li className='nav-item'><a href="#iphone_info"> Iphone</a></li>
+                    <li className='nav-item'><a href="#appleWatch_info"> Apple Wathc</a></li>                    
+                    <li className='nav-item'><a href="#my_products"> Nossos Produtos</a></li>
+                    <li className='nav-item'><a href="#contact_me"> Contato</a></li>
                 </ul>
             </div>
             
@@ -54,11 +53,10 @@ export function HeaderComponent(){
         <div className='mobile-menu'>
                 <ul className='nav-list-mobile'>
                     <li className='nav-item'><a href="#"> Início</a></li>
-                    <li className='nav-item'><a href="#"> Apple Wathc</a></li>
-                    <li className='nav-item'><a href="#"> Iphone</a></li>
-                    <li className='nav-item'><a href="#"> Vantagens</a></li>
-                    <li className='nav-item'><a href="#"> Nossos Produtos</a></li>
-                    <li className='nav-item'><a href="#"> Contato</a></li>
+                    <li className='nav-item'><a href="#iphone_info"> Apple Wathc</a></li>
+                    <li className='nav-item'><a href="#appleWatch_info"> Iphone</a></li>                    
+                    <li className='nav-item'><a href="#my_products"> Nossos Produtos</a></li>
+                    <li className='nav-item'><a href="#contact_me"> Contato</a></li>
                 </ul>
             </div>
         )}

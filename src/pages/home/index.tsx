@@ -1,6 +1,6 @@
 import React from "react";
 import './styles.scss';
-import { SectionApresentation } from "../../components/Apresentation";
+import { Header, SectionApresentation } from "../../components/Apresentation";
 import { IphoneInfo } from "../../components/Iphone-Info";
 import { AppleWatchInfo } from "../../components/apple-watch-info";
 import Iphone14 from '../../Imgs/iphone14.png'
@@ -11,6 +11,7 @@ import MagSafe from '../../Imgs/magsafe.png'
 import AirPods from '../../Imgs/airpod.png'
 import AppleWatch from '../../Imgs/apple-what.png'
 import { Carrousel } from "../../components/carrousels/Carrousel";
+import { Contact } from "../../components/Contatc";
 
 
 const myProductsIphone = [
@@ -159,15 +160,22 @@ export const Home = () => {
 
   return (
   <div>
-    <SectionApresentation />  
-    <div className="info-products-container">
+    <SectionApresentation  />  
+    <div className="info-products-container" id='section_info'>
+      <div id="iphone_info">
        <IphoneInfo />  
+      </div>
+      <div id="appleWatch_info">
         < AppleWatchInfo />
+      </div>
     </div>
-    <div className="products-disponiveis">
+    <div className="products-disponiveis" id="my_products">
       <Carrousel tittle='Iphones' cards={myProductsIphone}/>
       <Carrousel tittle="Apple Watch" cards={myProductsAppleWatch}/>
       <Carrousel tittle="Acessorios" cards={myProductsAcessories}/>
+    </div>
+    <div id="contact_me">
+    <Contact />
     </div>
   </div>
   );

@@ -49,7 +49,11 @@ export function CardComponent(props: CardProps) {
                     <text> {props.observation}  </text>
                 </li>
             </ul>
-        <button>
+        <button onClick={() => {
+           window.open(
+            `https://wa.me/5544999097786?text=Olá+poderia+me+passar+mais+informações+sobre+o+produto&type=custom_url&app_absent=0`
+          );
+        }}>
             Comprar
         </button>    
         </div>

@@ -15,9 +15,11 @@ export function SectionApresentation(){
         <span>                        
             Aqui na gabriel do cell nós procuramos sempre prestar o melhor atendimento possivel visando sempre a necessidade e a satisfação do cliente
         </span>
-        <button>
-            Ver Produtos
-        </button>    
+        <a href='#my_products'>
+            <button>
+                Ver Produtos
+            </button>    
+        </a>
         </section>
         <aside className='image-container'>
             <img className='principal-image' src={IphoneAppleWatch} alt="aplle watch e iphone" />

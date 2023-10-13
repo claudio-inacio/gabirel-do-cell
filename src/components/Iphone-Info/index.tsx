@@ -55,9 +55,13 @@ export function IphoneInfo(){
             </h1>
             <BorderBoxGradient message='Qualidade Design e Tecnologia' /> 
             <InfoComplement imagePrincipal={iphoneImage} textColor='white' position="rigth" infoLeft={infoIphoneLeft} infoRigth={infoIphoneRigth} />
-            <button>
-                Ver disponiveis
-            </button>    
+            
+            {/* <a href="#my_products">
+             <button onClick={() => console.log('teste')}>
+                Ver disponiveissdfew
+            </button>   
+            </a> */}
+            
         </section>
     </aside>
    ) 

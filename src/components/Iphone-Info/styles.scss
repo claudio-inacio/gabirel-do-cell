@@ -30,7 +30,7 @@ $desktop-width: 791px;
     background-size: auto;
     background-position: center center;
     position: relative;
-    z-index: -1;
+    // z-index: -1;
     max-width: 100%;
     min-width: 320px;
     width: 100%;
@@ -63,6 +63,8 @@ $desktop-width: 791px;
             font-size: 1.5rem;
         }
         button{
+            position: absolute;
+            z-index: 1;
             margin-top: 2rem;
             margin-bottom: 3rem;
             padding: 15px 35px;

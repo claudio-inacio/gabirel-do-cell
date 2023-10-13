@@ -28,6 +28,15 @@ export default function Slider({ children}: SliderProps) {
      modules={[Pagination]}
      className="mySwiper"
         breakpoints={{
+        100: {
+          slidesPerView: 1,
+        },
+        200: {
+          slidesPerView: 1,
+        },
+        300: {
+          slidesPerView: 1,
+        },
         400: {
           slidesPerView: 1,
         },
