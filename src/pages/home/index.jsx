@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './styles.scss';
-import { Header, SectionApresentation } from "../../components/Apresentation";
-import { IphoneInfo } from "../../components/Iphone-Info";
+import { SectionApresentation } from "../../components/Apresentation";
+
 import { AppleWatchInfo } from "../../components/apple-watch-info";
 import Iphone14 from '../../Imgs/iphone14.png'
 import Fonte from '../../Imgs/fonte.png'
@@ -12,6 +12,7 @@ import AirPods from '../../Imgs/airpod.png'
 import AppleWatch from '../../Imgs/apple-what.png'
 import { Carrousel } from "../../components/carrousels/Carrousel";
 import { Contact } from "../../components/Contatc";
+import IphoneInfo from "../../components/Iphone-Info";
 
 
 const myProductsIphone = [
@@ -156,27 +157,64 @@ const myProductsAcessories = [
   }
 ]
 
+// dynamicBlur.js
+export function enableDynamicBlur() {
+  const root = document.documentElement;
+
+  window.addEventListener("scroll", () => {
+    const blurValue = Math.min(10, window.scrollY / 70); 
+    root.style.setProperty("--dynamic-blur", `${blurValue}px`);
+  });
+}
+
+export function enableScrollReveal() {
+  const elements = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  elements.forEach((el) => observer.observe(el));
+}
+
+
+
 export const Home = () => {
+  useEffect(() => {
+    enableDynamicBlur();
+    enableScrollReveal();
+  }, []);
 
   return (
-  <div>
-    <SectionApresentation  />  
-    <div className="info-products-container" id='section_info'>
-      <div id="iphone_info">
-       <IphoneInfo />  
-      </div>
-      <div id="appleWatch_info">
-        < AppleWatchInfo />
-      </div>
+    <div className="home-container">
+      <SectionApresentation />
+
+      <section className="info-products-container reveal" id="section_info">
+        <div id="iphone_info">
+          <IphoneInfo />
+        </div>
+        <div id="appleWatch_info">
+          <AppleWatchInfo />
+        </div>
+      </section>
+
+      <section className="products-disponiveis reveal" id="my_products">
+        <Carrousel tittle="Iphones" cards={myProductsIphone} />
+        <Carrousel tittle="Apple Watch" cards={myProductsAppleWatch} />
+        <Carrousel tittle="Acessorios" cards={myProductsAcessories} />
+      </section>
+
+      <section id="contact_me" className="reveal">
+        <Contact />
+      </section>
     </div>
-    <div className="products-disponiveis" id="my_products">
-      <Carrousel tittle='Iphones' cards={myProductsIphone}/>
-      <Carrousel tittle="Apple Watch" cards={myProductsAppleWatch}/>
-      <Carrousel tittle="Acessorios" cards={myProductsAcessories}/>
-    </div>
-    <div id="contact_me">
-    <Contact />
-    </div>
-  </div>
   );
 };
+

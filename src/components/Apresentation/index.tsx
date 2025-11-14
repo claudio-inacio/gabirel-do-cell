@@ -1,32 +1,40 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { memo } from 'react';
-import './styles.scss';
-import IphoneAppleWatch from '../../Imgs/principalImage.png'
+import { memo } from "react";
+import "./styles.scss";
+import IphoneAppleWatch from "../../Imgs/principalImage.png";
+import logo from "../../Imgs/logo.png";
+import BackgroundTexture from "../../Imgs/logo.png"; // ← mesma imagem do header
 
+export function SectionApresentation() {
+  return (
+    <main
+      className="apresentation-container"
+      style={{ backgroundImage: `url(${BackgroundTexture})` }}
+    >
+      <section className="description-container">
+        <h1>Bem-vindo à Gabriel do Cell</h1>
 
-export function SectionApresentation(){
-    
-   return(
-    <main className='apresentation-container'> 
-        <section className='discripition-container'>
-            <h1>
-             Seja bem Vindo
-            </h1>
-        <span>                        
-            Aqui na gabriel do cell nós procuramos sempre prestar o melhor atendimento possivel visando sempre a necessidade e a satisfação do cliente
+        <span>
+          Na Gabriel do Cell você encontra atendimento dedicado, transparente e
+          feito para ajudar você a escolher o iPhone ideal. Nosso foco é sempre
+          sua necessidade e satisfação — com confiança e qualidade.
         </span>
-        <a href='#my_products'>
-            <button>
-                Ver Produtos
-            </button>    
+        <br/>
+        <br/>
+
+        <a href="#my_products">
+          <button>Ver Produtos</button>
         </a>
-        </section>
-        <aside className='image-container'>
-            <img className='principal-image' src={IphoneAppleWatch} alt="aplle watch e iphone" />
-        </aside>
+      </section>
+
+      <aside className="image-container">
+        <img
+          className="principal-image"
+          src={IphoneAppleWatch}
+          alt="iphone e apple watch"
+        />
+      </aside>
     </main>
-   ) 
+  );
 }
 
-
-export const Header = memo(SectionApresentation)

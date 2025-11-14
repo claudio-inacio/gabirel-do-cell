@@ -1,17 +1,17 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { memo } from 'react';
 import './styles.scss';
-import Iphone from '../../Imgs/iphoneNovo-removebg-preview.png'
 import { BorderBoxGradient } from '../box-border-gradiente';
-import { InfoComplement } from "../info-complementar-product";
+
 import monitorIcon  from "../../Imgs/monitiramento-icon-blue.png";
 import retinaIcon  from "../../Imgs/retina-icon-blue.png";
 import resistenceIcon  from "../../Imgs/cadeado-icon-blue.png";
 import wirelesIcon  from "../../Imgs/wirelles-icon-blue.png";
 import heartIcon  from "../../Imgs/heart-icon-blue.png";
 import energyIcon  from "../../Imgs/energy-icon-blue.png";
-import suporteIcon  from "../../Imgs/suporte-icon-white.png";
+
 import aplleWatchImage  from "../../Imgs/apple-what.png";
+import { InfoComplement } from '../info-complementar-product';
 
 
 export function AppleWatchInfo(){
@@ -50,19 +50,23 @@ export function AppleWatchInfo(){
        }
      ]
    return(
-    <aside className='appleWatch-container' > 
-        <section className='appleWatch-descripition-container'>
-            <h1>
-
-             Apple Watch
-            </h1>
-            <BorderBoxGradient message='Praticidade, Precisão e Elegância' /> 
-            <InfoComplement imagePrincipal={aplleWatchImage} textColor='white' position="rigth" infoLeft={infoAppleWatchLeft} infoRigth={infoAppleWatchRigth} />
-            {/* <button>
-                Ver disponiveis
-            </button>     */}
-        </section>
-    </aside>
+     <aside className="iphone-section" aria-labelledby="iphone-title">
+          <div className="iphone-inner">
+            <header className="iphone-top">
+              <h2 id="iphone-title">
+             Apple Watch</h2>
+              <BorderBoxGradient message="Praticidade, Precisão e Elegância" />
+            </header>
+    
+            <InfoComplement
+              imagePrincipal={aplleWatchImage}
+              position="right"
+              textColor="white"
+              infoLeft={infoAppleWatchLeft}
+              infoRight={infoAppleWatchRigth}
+            />
+          </div>
+        </aside>
    ) 
 }
 

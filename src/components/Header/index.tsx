@@ -1,68 +1,74 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable jsx-a11y/alt-text */
-import { memo, useEffect, useState } from 'react';
-import './styles.scss';
-import logo from '../../Imgs/logo.png'
-import menuIcon from '../../Imgs/cardapio.png'
-import menuIconOpen from '../../Imgs/menu-icon-open.png'
+import { useState, useEffect } from "react";
+import "./styles.scss";
+import logo from "../../Imgs/logo.png";
 
-export function HeaderComponent(){
-    const [isOpen, setIsOpen] = useState(false)
-    const openMenu = () => {
-        setIsOpen(!isOpen)
-    }
-    const [scrollPosition, setScrollPosition] = useState(0);
-    
-    const handleScroll = () => {
-        const position = window.pageYOffset;
-        setScrollPosition(position);
-    };
+export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll, { passive: true });
-    
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-    
-   return(        
-    <header className='myHeader' id={scrollPosition || isOpen ? 'meu-teste' : ''}> 
-        <nav className='nav-bar'>
-            <div className='logo-container'>
-                <img src={logo} alt='logo Gabriel do Cell' />
-            </div>
-            
-            <div className='desktop-menu'>
-                <ul className='nav-list-desktop'>
-                    <li className='nav-item'><a href="#"> Início</a></li>
-                    <li className='nav-item'><a href="#iphone_info"> Iphone</a></li>
-                    <li className='nav-item'><a href="#appleWatch_info"> Apple Wathc</a></li>                    
-                    <li className='nav-item'><a href="#my_products"> Nossos Produtos</a></li>
-                    <li className='nav-item'><a href="#contact_me"> Contato</a></li>
-                </ul>
-            </div>
-            
-            <div className='mobile-icon'>
-                <button onClick={() => openMenu()}>
-                    <img className='icon-nav' src={ isOpen ? menuIconOpen : menuIcon} />
-                </button>
-            </div>
-        </nav>
-        {isOpen && (
-        <div className='mobile-menu'>
-                <ul className='nav-list-mobile'>
-                    <li className='nav-item'><a href="#"> Início</a></li>
-                    <li className='nav-item'><a href="#iphone_info"> Apple Wathc</a></li>
-                    <li className='nav-item'><a href="#appleWatch_info"> Iphone</a></li>                    
-                    <li className='nav-item'><a href="#my_products"> Nossos Produtos</a></li>
-                    <li className='nav-item'><a href="#contact_me"> Contato</a></li>
-                </ul>
-            </div>
-        )}
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const navItems = [
+    { label: "SOBRE A LOJA", href: "#" },
+    { label: "IPHONE", href: "#iphone_info" },
+    { label: "APPLE WATCH", href: "#appleWatch_info" },
+    { label: "PRODUTOS", href: "#my_products" },
+    { label: "CONTATO", href: "#contact_me" },
+  ];
+
+  return (
+    <header className={`header ${scrolled ? "scrolled" : ""}`}>
+      <nav className="navbar">
+
+        <img src={logo} alt="Logo" className="logo" />
+
+        <ul className="menu-desktop">
+          {navItems.map((item) => (
+            <li key={item.href}>
+              <a href={item.href}>{item.label}</a>
+            </li>
+          ))}
+        </ul>
+
+        <button className="mobile-button" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? (
+            <svg width="26" height="26" viewBox="0 0 24 24">
+              <path
+                d="M18 6L6 18M6 6l12 12"
+                stroke="#000"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
+          ) : (
+
+            <svg width="26" height="26" viewBox="0 0 24 24">
+              <path
+                d="M3 6h18M3 12h18M3 18h18"
+                stroke="#000"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
+          )}
+        </button>
+      </nav>
+
+      <div className={`menu-mobile ${isOpen ? "open" : ""}`}>
+        {navItems.map((item) => (
+          <a
+            key={item.href}
+            href={item.href}
+            onClick={() => setIsOpen(false)}
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
     </header>
-   ) 
+  );
 }
-
-
-export const Header = memo(HeaderComponent)

@@ -1,0 +1,17 @@
+.carrousel-section {
+  width: 100%;
+  padding: 2rem 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.carrousel-title {
+    padding-left: 6rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #000;
+  text-align: center;
+}

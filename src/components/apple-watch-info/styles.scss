@@ -1,99 +1,49 @@
-$phone-width: 520px;
-$tablet-min-width: 521px;
-$tablet-max-width: 790px;
-$desktop-width: 791px;
+/* iphone section styles (mobile-first) */
+// @import "../shared/mixins"; // se você tiver mixins centralizados (opcional)
 
-@mixin phone {
-    @media (max-width: #{$phone-width})  {
-        @content;
-    }
-}
-@mixin tablet {
-    @media (min-width: #{$tablet-min-width}) and (max-width: #{$tablet-max-width})  {
-        @content;
-    }
-}
-@mixin phoneAndTablet {
-    @media (max-width: #{$tablet-max-width})  {
-        @content;
-    }
-}
-@mixin desktop {
-    @media (min-width: #{$desktop-width})  {
-        @content;
-    }
-}
+.iphone-section {
+  width: 100%;
+  padding: 3rem 1.25rem;
+  // background: linear-gradient(120deg, #3a4bd6 0%, #7b5cff 50%, #b47bf4 100%);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  box-sizing: border-box;
 
-.appleWatch-container{
-    background-color: transparent;
-    max-width: 100%;
-    min-width: 319px;
+  .iphone-inner {
     width: 100%;
-    height: 110%;     
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    
-    .appleWatch-descripition-container{
-        margin-top: 1rem ;
-        display: flex;
-        padding: 2rem;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        
-        h1{
-            font-size: 3.5rem;
-            color: white;
-        }
-        
-        text{
-            margin-top: 1rem;
-            color: white;
-            align-items: center;
-            text-align: start;    
-            font-weight: 500;
-            font-size: 1.5rem;
-        }
-        button{
-            margin-top: 2rem;
-            margin-bottom: 3rem;
-            padding: 15px 35px;
-            border-radius: 3px;
-            background: var(--background-button);
-            color: white;
-            
-            &:hover{
-                background: var(--hover-button);
-            }   
-        }
-    }
-    
-    @include phone(){
-        .appleWatch-descripition-container{
-            margin-top: 2rem;
-            
-            text{
-                font-size: 1.3rem;
-            }
-        }
-    }
-    
-    @include tablet(){
-        flex-direction: column;
-        .ipappleWatch-descripition-container{
-            margin-top: 3rem;
-        }
-    }
-    @include phoneAndTablet(){
-        flex-direction: column;
-        
-    }
-    @include desktop(){
-            
-    }
-    
+    max-width: 1200px;
+  }
 
+  .iphone-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
+    margin-bottom: 1.4rem;
+
+    h2 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0;
+      color: #fff;
+      text-shadow: 0 6px 18px rgba(11, 10, 20, 0.15);
+    }
+  }
+
+  @media (min-width: 920px) {
+    padding: 5rem 2rem;
+
+    .iphone-top {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+    }
+  }
 }
