@@ -1,11 +1,10 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { memo, useEffect } from "react";
+import { memo, useEffect } from "react";
 import "./styles.scss";
 import iphoneIcon from "../../Imgs/iphone-icon-white.png";
 import iosIcon from "../../Imgs/ios-logo-white.png";
 import ecosistemaApple from "../../Imgs/apple-icon-white.png";
 import desempenhoIcon from "../../Imgs/desempenho-icon-white.png";
-import retinaIcon  from "../../Imgs/retina-icon-blue.png";
 import cameraIcon from "../../Imgs/apple-camera-white.png";
 import suporteIcon from "../../Imgs/suporte-icon-white.png";
 import { BorderBoxGradient } from "../box-border-gradiente";

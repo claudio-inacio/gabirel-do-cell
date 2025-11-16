@@ -7,10 +7,6 @@ import AddressIcon from '../../Imgs/address-icon.png'
 import InstaIcon from '../../Imgs/instagram-icon.png'
 import FacebookIcon from '../../Imgs/facebook-icon.png'
 import TikTokIcon from '../../Imgs/tiktok-icon.png'
-import { BorderBoxGradient } from '../box-border-gradiente';
-import { InfoComplement } from "../info-complementar-product";
-import aplleWatchImage  from "../../Imgs/apple-what.png";
-
 
 export function Contact(){
 

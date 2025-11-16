@@ -1,8 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { memo } from "react";
 import "./styles.scss";
 import IphoneAppleWatch from "../../Imgs/principalImage.png";
-import logo from "../../Imgs/logo.png";
 import BackgroundTexture from "../../Imgs/logo.png"; // ← mesma imagem do header
 
 export function SectionApresentation() {
