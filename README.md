@@ -65,4 +65,4 @@ Otimização para leitura e manutenção no código
 🌐 Deploy
 
 Acesse a Landing Page aqui:
-👉 Adicione o link do deploy aqui, se houver.
+https://gabirel-do-cell.vercel.app/
