@@ -1,46 +1,68 @@
-# Getting Started with Create React App
+📱 Gabriel do Cell — Landing Page de Catálogo de Produtos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Uma landing page moderna e responsiva desenvolvida para facilitar a exibição dos produtos da loja Gabriel do Cell.
+Construída com React e Sass, aplicando organização de componentes, separação de responsabilidades e boas práticas de UI/UX.
 
-## Available Scripts
+O objetivo da página é apresentar de forma clara e visualmente agradável os principais serviços e produtos oferecidos pela loja, permitindo ao cliente encontrar rapidamente o que precisa.
 
-In the project directory, you can run:
+🖼️ Prévia do Projeto
+<img src="/mnt/data/gabriel-do-cel-project.png" alt="Landing Page Gabriel do Cell" width="100%"/>
+🧠 Sobre o Projeto
 
-### `npm start`
+A landing page foi criada como um catálogo digital, permitindo que o cliente visualize os produtos disponíveis de maneira intuitiva e organizada.
+Toda a interface foi estruturada para fornecer navegação fluida, visual limpo e performance otimizada.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Além disso, as imagens dos produtos utilizadas são meramente ilustrativas, com o propósito de compor o layout e enriquecer o portfólio.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+🚀 Tecnologias Utilizadas
 
-### `npm test`
+React.js — estrutura principal da aplicação
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Sass (SCSS) — estilização modular e organizada
 
-### `npm run build`
+CSS Modules / Arquitetura escalável
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Componentização — páginas e seções separadas em componentes reutilizáveis
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Responsividade — otimizado para dispositivos móveis, tablets e desktops
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Boas práticas de UI/UX
 
-### `npm run eject`
+🧩 Funcionalidades da Landing Page
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Página inicial com apresentação da loja
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Sessão destacando iPhones, Apple Watch e demais produtos
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Design moderno, baseado na identidade visual da marca
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Cabeçalho fixo com navegação suave
 
-## Learn More
+Seções organizadas em blocos visuais
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Layout responsivo em todos os dispositivos
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Botão "Ver Produtos" direcionando o usuário para a área principal
+
+Foco em clareza, estética e facilidade de navegação
+
+🏗️ Boas Práticas Aplicadas
+
+Componentização de seções (Header, Hero, Produtos etc.)
+
+Reutilização de elementos visuais
+
+Estrutura de pastas limpa e escalável
+
+Estilização separada por módulo (Sass + partials)
+
+Variáveis de estilo para padronização
+
+Classes bem nomeadas e semânticas
+
+Otimização para leitura e manutenção no código
+
+🌐 Deploy
+
+Acesse a Landing Page aqui:
+👉 Adicione o link do deploy aqui, se houver.
